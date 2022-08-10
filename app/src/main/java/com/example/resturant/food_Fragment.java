@@ -69,16 +69,22 @@ public class food_Fragment extends Fragment {
         final ListView listView=V.findViewById(R.id.gl);
 
         ArrayList<food> foods=new ArrayList<>();
-
+        
+        ArrayList<dessertmenu> dessert=new ArrayList<>();
 
         foods.add(new  food(R.drawable.meal , getString(R.string.home_food_tab_meal)));
         foods.add(new  food(R.drawable.pizza , getString(R.string.home_food_tab_pizza)));
         foods.add(new  food(R.drawable.sand , getString(R.string.home_food_tab_sandwitch)));
         foods.add(new  food(R.drawable.crepe , getString(R.string.home_food_tab_crepe)));
+        
+       dessert.add(new dessertmenu(R.drawable.donuts, getString(R.string.text_name)));
 
 
         ListViewFood adptar =new ListViewFood(getActivity(),R.layout.card_layout,foods);
         listView.setAdapter(adptar);
+        
+        DessertAdapter adptard =new DessertAdapter(getActivity(),R.layout.mainmenu,dessert);
+        listView.setAdapter(adptard);
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -110,6 +116,12 @@ public class food_Fragment extends Fragment {
 
                         Intent intent3=new Intent(getActivity(),crep_menu.class);
                         startActivity(intent3);
+                        break;
+                        
+                        case 4:
+
+                        Intent intent4=new Intent(getActivity(),dessertmenu.class);
+                        startActivity(intent);
                         break;
 
                 }
