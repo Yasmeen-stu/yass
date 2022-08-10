@@ -1,4 +1,4 @@
-package com.example.thedessert;
+package com.example.resturantt;
 
 public class dessertmenu {
    private String dessert_name,dessert_price;
